@@ -4,6 +4,8 @@ const {validate} = require('../middleware/validation');
 
 const router = express.Router();
 
+router.get('/search', searchForContact);
+
 router.get('/', getAllContacts);
 
 router.post('/create', validate, createContact);
@@ -14,6 +16,5 @@ router.put('/:id', validate, updateContact);
 
 router.delete('/:id', deleteContact);
 
-router.post('/search', searchForContact);
 
 module.exports = router;
